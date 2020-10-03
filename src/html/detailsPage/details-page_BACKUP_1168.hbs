@@ -1,0 +1,73 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<section id="js-detailsPage" class="main__detailsPage">
+<div class="main__detailsContainer">
+<div class="main__imgContainer">
+<img id="js-detailsImg" class="main__detailsImg" src="https://image.tmdb.org/t/p/w500{{poster_path}}">
+</div>
+<div class="main__textContainer">
+<h2 id="js-detailsTitle" class="main__detailsTitle">{{title}}</h2>
+<table class="main__detailsTable">
+<tbody class="main__detailsBody">
+<tr class="main__detailsTextRow">
+<td class="main__td">vote</td>
+<td class="main__td" id="js-vote">{{vote_average}}</td>
+</tr>
+<tr class="main__detailsTextRow">
+<td class="main__td">popularity</td>
+<td class="main__td" id="js-popularity">{{popularity}}</td>
+</tr>
+<tr class="main__detailsTextRow">
+<td class="main__td">original title</td>
+<td class="main__td" id="js-originalTitle">{{original_title}}</td>
+</tr>
+<tr class="main__detailsTextRow">
+<td class="main__td">genre</td>
+<td class="main__td">
+{{#each genres}}
+{{this.name}},
+{{/each}}
+</td>
+</tr>
+</tbody>
+</table>
+<h3 class="main__detailsAbout">About</h3>
+<p id="js-detailsAboutText" class="main__detailsAboutText">{{overview}}</p>
+<ul class="main__addList">
+<<<<<<< HEAD
+<li class="main_btnList">
+=======
+<li>
+>>>>>>> 7333b7f83e5a62f0c85e9102246d99d94190ad36
+<button class="btnAddQueue" data-action="add" data-movieID="{{id}}">Add to queue</button>
+</li>
+<li class="main_btnList">
+<button class="btnAddWatch" data-action="add" data-movieID="{{id}}">Add to watched</button>
+</li>
+</ul>
+</div>
+</div>
+</section>
+=======
+=======
+>>>>>>> cf61abad2f40efa787199b7410c48ae58a2d2544
+<div class="itemCard">
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="filmImg">
+        <h2>{{title}}</h2>
+        <p>vote: {{vote_average}}</p>
+        <p>popularity: {{vote_count}}</p>
+        <p>original_title: {{original_title}}</p>
+        <ul>
+                {{#each genres}}
+                <li>{{this.name}}</li>
+                {{/each}}
+        </ul>
+        <p>About: {{overview}}</p>
+        <button type="button" class="js-button-queue">Add to queue</button>
+        <button type="button" class="js-button-watched">Add to watched</button>
+<<<<<<< HEAD
+</div>
+>>>>>>> cf61abad2f40efa787199b7410c48ae58a2d2544
+=======
+</div>
+>>>>>>> cf61abad2f40efa787199b7410c48ae58a2d2544

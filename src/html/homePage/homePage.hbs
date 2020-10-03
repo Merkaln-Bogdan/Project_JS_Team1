@@ -1,0 +1,11 @@
+<ul class="movie-cards">
+    {{#each this}}
+    <li class="itemCard" data-movieID="{{id}}">
+            <a href="#" class="close hide" data-movieID="{{id}}"></a>
+            <a href="#id={{id}}" class="itemCard" onclick="location.replace('#id={{id}}')">
+             {{#if backdrop_path}} <img src="https://image.tmdb.org/t/p/w500{{backdrop_path}}"> {{else}} <img src="src/images/no_image.jpg"> {{/if}}            
+            <h2>{{title}} ({{release_date}})</h2>
+            </a>
+    </li>
+    {{/each}}
+</ul>

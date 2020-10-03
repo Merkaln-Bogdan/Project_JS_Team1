@@ -1,0 +1,15 @@
+<div class="itemCard">
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="filmImg">
+        <h2>{{title}}</h2>
+        <p>vote: {{vote_average}}</p>
+        <p>popularity: {{vote_count}}</p>
+        <p>original_title: {{original_title}}</p>
+        <ul>
+                {{#each genres}}
+                <li>{{this.name}}</li>
+                {{/each}}
+        </ul>
+        <p>About: {{overview}}</p>
+        <button type="button" class="js-button-queue">Add to queue</button>
+        <button type="button" class="js-button-watched">Add to watched</button>
+</div>
