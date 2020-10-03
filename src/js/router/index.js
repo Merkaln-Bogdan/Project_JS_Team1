@@ -28,7 +28,7 @@ refs.sidebarQueueBtn.addEventListener('click', e => {
 
 export const initRouter = () => {
   router.on({
-    'Project_JS_Team1/': function () {
+    '/': function () {
       refs.queueButton.classList.remove('active-button');
       refs.watchButton.classList.remove('active-button');
       refs.sidebar.classList.add('hide');
@@ -37,7 +37,7 @@ export const initRouter = () => {
       refs.cardContainer.classList.remove('hide');
       mainPage();
     },
-    'Project_JS_Team1/library/watched': function () {
+    'library/watched': function () {
       console.log(location.pathname);
       refs.sidebar.classList.remove('hide');
       refs.libraryPageSection.classList.remove('hide');
