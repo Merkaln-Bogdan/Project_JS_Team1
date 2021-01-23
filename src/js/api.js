@@ -29,8 +29,6 @@ export default {
         `${proxyUrl}${BaseUrl}/search/movie?api_key=${API}&page=${this.currPage}&query=${query}&include_adult=false&language=en-US`,
       )
       .then(response => {
-        this.currPage += 1;
-
         if (response.data.total_pages === 0) {
           return (
             alert('Please enter correct film name') ||

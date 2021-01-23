@@ -8,10 +8,6 @@
   opacity: 0.3;
 }
 
-/* .close:hover {
-    transform: scale(1.02);
-  } */
-
 .close:before,
 .close:after {
   position: absolute;

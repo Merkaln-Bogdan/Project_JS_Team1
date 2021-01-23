@@ -1,10 +1,9 @@
 import api from '../api';
 import refs from '../refs';
 import mainPageTemplate from '../../html/homePage/homePage.hbs';
-import error from '../../html/error.hbs';
-import { mainPage } from '../initialHomePage/initialHomePage';
 import { infoMovieCardBuild } from '../filmDetailsPage/filmDetailsPage';
-
+const emptyMessage = `<h2 class="empty-message">You do not have watched movies.
+<a href="../../index.html">Add them</a></h2>`;
 refs.serchForm.addEventListener('submit', e => {
   refs.loadMoreBtn.classList.remove('hide');
   api.currPage = 1;
@@ -13,12 +12,6 @@ refs.serchForm.addEventListener('submit', e => {
   const text = refs.textArea.value;
   showCardsByquery(text);
 });
-// const movieId = api.getMovieIdFromLink();
-// if (movieId) {
-//   infoMovieCardBuild.card(movieId);
-// } else {
-//   mainPage();
-// }
 
 function showCardsByquery(query) {
   api.getMoviesByQuery(query).then(data => {
@@ -27,10 +20,12 @@ function showCardsByquery(query) {
     );
     const markup = data.results.length
       ? mainPageTemplate(data.results)
-      : error();
+      : emptyMessage;
     infoMovieCardBuild.insertCardsToMainPage(markup);
+    infoMovieCardBuild.setOnclick();
   });
 }
+
 const btnPrev = document.querySelector('.prev_btn');
 const btnNext = document.querySelector('.next_btn');
 const counter = document.querySelector('.counter__value');
@@ -44,12 +39,12 @@ async function nextPageHandler() {
   api.currPage = api.currPage + 1;
   const query = refs.textArea.value;
   const request = query
-    ? async () => await api.getMoviesByQuery(query).bind(api)
+    ? async () => await api.getMoviesByQuery(query)
     : api.getPopularFilms.bind(api);
   const movies = await request();
   const markup = movies.results.length
     ? mainPageTemplate(movies.results)
-    : error();
+    : emptyMessage;
 
   refs.cardList.innerHTML = '';
   refs.cardList.insertAdjacentHTML('beforeend', markup);
@@ -67,12 +62,12 @@ async function prevPageHandler() {
 
   const query = refs.textArea.value;
   const request = query
-    ? async () => api.getMoviesByQuery(query).bind(api)
+    ? async () => api.getMoviesByQuery(query)
     : api.getPopularFilms.bind(api);
   const movies = await request();
   const markup = movies.results.length
     ? mainPageTemplate(movies.results)
-    : error();
+    : emptyMessage;
 
   refs.cardList.innerHTML = '';
   refs.cardList.insertAdjacentHTML('beforeend', markup);

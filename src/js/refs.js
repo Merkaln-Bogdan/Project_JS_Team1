@@ -1,8 +1,6 @@
 const refs = {
   logoHome: document.querySelector('.site-logo'),
   home: document.querySelector('#nav-home'),
-  body: document.querySelector('body'),
-  intro: document.querySelector('.intro'),
   container: document.querySelector('#container'),
   serchForm: document.querySelector('.search-form'),
   textArea: document.querySelector('#search-form'),
@@ -25,5 +23,4 @@ const refs = {
   queueButton: document.querySelector('.sidebar_queue-button'),
   cardContainer: document.querySelector('.card_container'),
 };
-
 export default refs;
