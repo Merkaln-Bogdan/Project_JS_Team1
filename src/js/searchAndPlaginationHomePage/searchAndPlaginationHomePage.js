@@ -19,8 +19,8 @@ function showCardsByquery(query) {
       elem => (elem.release_date = elem.release_date.split('-')[0]),
     );
     const markup = data.results.length
-      ? mainPageTemplate(data.results)
-      : emptyMessage;
+      ? emptyMessage
+      : mainPageTemplate(data.results);
     infoMovieCardBuild.insertCardsToMainPage(markup);
     infoMovieCardBuild.setOnclick();
   });

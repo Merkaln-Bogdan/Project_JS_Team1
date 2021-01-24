@@ -18,13 +18,13 @@ export const initRouter = () => {
     .on({
       '/': function () {
         console.log('hello homepage!!!');
+        refs.serchForm.classList.remove('hide');
         refs.queueButton.classList.remove('active-button');
         refs.watchButton.classList.remove('active-button');
         refs.pagination.classList.remove('hide');
         refs.sidebar.classList.add('hide');
         refs.libraryPageSection.classList.add('hide');
         refs.serchForm.classList.remove('hide');
-        refs.cardContainer.classList.remove('hide');
         mainPage();
       },
     })
