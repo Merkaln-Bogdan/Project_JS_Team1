@@ -18,9 +18,7 @@ function showCardsByquery(query) {
     data.results.map(
       elem => (elem.release_date = elem.release_date.split('-')[0]),
     );
-    const markup = data.results.length
-      ? emptyMessage
-      : mainPageTemplate(data.results);
+    const markup =  mainPageTemplate(data.results);
     infoMovieCardBuild.insertCardsToMainPage(markup);
     infoMovieCardBuild.setOnclick();
   });
@@ -65,9 +63,7 @@ async function prevPageHandler() {
     ? async () => api.getMoviesByQuery(query)
     : api.getPopularFilms.bind(api);
   const movies = await request();
-  const markup = movies.results.length
-    ? mainPageTemplate(movies.results)
-    : emptyMessage;
+  const markup = mainPageTemplate(movies.results)
 
   refs.cardList.innerHTML = '';
   refs.cardList.insertAdjacentHTML('beforeend', markup);
