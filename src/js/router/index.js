@@ -17,7 +17,6 @@ export const initRouter = () => {
   router
     .on({
       '/': function () {
-        console.log('hello homepage!!!');
         refs.serchForm.classList.remove('hide');
         refs.queueButton.classList.remove('active-button');
         refs.watchButton.classList.remove('active-button');
@@ -32,7 +31,6 @@ export const initRouter = () => {
     router
     .on({
     'library/watched': function () {
-      console.log(location.pathname);
       refs.queueButton.classList.remove('active-button');
       refs.watchButton.classList.add('active-button');
       refs.sidebar.classList.remove('hide');
@@ -45,7 +43,6 @@ export const initRouter = () => {
   router
     .on({
       'library/queue': function () {
-        console.log('queue!!!',  window.location.href);
         refs.queueButton.classList.add('active-button');
         refs.watchButton.classList.remove('active-button');
         drawQueueFilmList();
