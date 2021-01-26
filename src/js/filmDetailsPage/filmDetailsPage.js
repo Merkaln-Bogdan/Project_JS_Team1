@@ -3,8 +3,7 @@ import cardTemplate from '../../html/detailsPage/details-page.hbs';
 import similarMoviesTemplate from '../../html/similar-movies.hbs';
 import api from '../api';
 import localStorageJs from '../localStorageJS';
-// const Message = `<h2 class="empty-message">You do not have watched movies.
-// <a href="../../index.html">Add them</a></h2>`;
+
 export const infoMovieCardBuild = {
   card(id) {
     api.getInfoById(id).then(data => {
@@ -28,7 +27,7 @@ export const infoMovieCardBuild = {
         $('.similarMovies').slick({
           dots: true,
           infinite: true,
-          speed: 300,
+          speed: 400,
           slidesToShow: 1,
           centerMode: true,
           variableWidth: true,

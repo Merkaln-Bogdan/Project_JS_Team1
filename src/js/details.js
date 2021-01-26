@@ -1,7 +1,6 @@
 import refs from './refs';
 import api from './api';
 import detailsItem from '../html/detailsPage/details-page.hbs';
-console.log(refs.cardList);
 refs.cardList.addEventListener('click', fetchMovieDetails);
 
 const menuItemPosition = refs.cardContainer;

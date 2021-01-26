@@ -9,6 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://Merkaln-Bogdan.github.io/Project_JS_Team1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Merkaln-Bogdan/Project_JS_Team1.git"
